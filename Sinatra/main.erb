@@ -1,0 +1,26 @@
+<% arr = Dir.entries("upload/") %>
+<% arr.shift(2) %>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="main.css"/>
+	</head>
+	<body>
+	<h1> Mad Libs! <h1>
+	<h2> A game made for kids, but are played out like adults xD!!! </h2>
+	<h3> Listed below are the stories that are available to play </h3>
+	</br>
+		<ul>
+			<% arr.each {|i| %>
+			<% story = i.chomp(".txt") %>
+			<li><a href="/<%= story %>"><%= story %></a></li>
+			</br>
+			<% } %>
+		</ul>
+		</br>
+		<h3> If you are not satisfied with these stories, try uploading one of your own</h3>
+		</br>
+		<ul>
+			<li><a href="/upload">Upload</a></li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<% @filename = params[:file][:filename] %>
+<% file = params[:file][:tempfile] %>
+<% File.open("upload/#{@filename}", 'wb') do |f| %>
+	<% f.write(file.read) %>
+<% end %>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="main.css"/>
+	</head>
+	<body>
+		<h1> Congratulations! </h1>
+		<h2> Your file was successfully added to the collection of stories. </h2>
+		<h3> Click the link below to return to the home page and to play your story </h3>
+		</br>
+		<ul>
+			<li><a href="/">Main</a></li>
+		</ul>
+	</body>
+</html>
+	
